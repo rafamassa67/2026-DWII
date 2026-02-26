@@ -1,0 +1,48 @@
+/* Estilos gerais */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Conteúdo principal */
+main {
+    display: flex;
+    min-height: 400px;
+    padding: 20px;
+}
+
+
+/* Rodapé */
+footer {
+    display: block;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+img {
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid grey;
+    margin: 20px, 20px, 20px, 20px;
+}
+
+aside {
+    flex: 1;
+}
+
+section {
+    border: 20px solid white;
+}
