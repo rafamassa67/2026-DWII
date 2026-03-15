@@ -8,8 +8,8 @@ Repositório: https://github.com/rafamassa67/2026-DWII
 -->
 <?php
 // Variaveis de php - serão utilizaas no HTML a baixo
-$nome = "Rafael";
-$profissao = "Estudante de Tecnologia";
+$nome = "Rafael de Morais Farias";
+$profissao = "Futuro professor e militar";
 $curso = "Técnico em informatica - IFPR";
 $pagina_atual = "inicio";
 ?>
@@ -20,11 +20,11 @@ $pagina_atual = "inicio";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifólio - <?php echo $nome; ?></title>
     <style>
-        body {font-family: Arial, sans-serif; margin: 0; background-color: #f3f4f6;}
+        body {font-family: Arial, sans-serif; margin: 0; background-color: #eee6c7;}
         nav {background-color: #4c0377; padding: 15px 30px;}
         nav a {color: white; text-decoration: none; margin-right: 20px; font-weight: bold;}
         nav a:hover {text-decoration: underline;}
-        .hero {background: linear-gradient(135deg, #ff0000, #0040ff); color: white; text-align: center; padding: 60px 20px;}
+        .hero {background: linear-gradient(135deg, #7c5ca8, #2a2a5c); color: #f8e7a2; text-align: center; padding: 60px 20px;}
         .hero h1 {font-size: 2.5em; margin-bottom: 10px;}
         .hero p {font-size: 1.2em; opacity: 0.9;}
         .container {max-width: 800px; margin: 40px auto; padding: 0 20px;}
@@ -34,10 +34,9 @@ $pagina_atual = "inicio";
 <body>
 <?php include "includes/cabecalho.php"; ?>
     <div class="hero">
-        <h1><?php echo $nome; ?>!</h1>
+        <h1><?php echo $nome; ?></h1>
         <p><?php echo $profissao; ?> | <?php echo $curso; ?></p>
     </div>
-
     <div class="container">
         <h1>Bem-vindo ao meu portfólio</h1>
         <p>Esta página foi gerado pelo PHP em: 
