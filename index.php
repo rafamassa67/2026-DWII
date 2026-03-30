@@ -27,7 +27,7 @@ $subtitulo = "Repositório 2026 — Desenvolvimento Web II";
 $aulas = [
 
     [
-        "numero"   => "00",
+        "numero"   => "02",
         "nome"     => "Apresentação Pessoal",
         "descricao"=> "Página estática com HTML e CSS — foto de perfil e layout responsivo.",
         "link"     => "00_apresentacao/index.html",
