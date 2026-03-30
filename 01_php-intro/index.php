@@ -1,48 +1,25 @@
-<!-- 01 php-intro/index.php -->
-<!--
-Desenvolvimento Web II (DWII) Disciplina
-Aula : 03 Arquitetura Web e Introdução ao PHP
-Autor : Rafael de Morais
-Data : 02/03/2026
-Repositório: https://github.com/rafamassa67/2026-DWII
--->
 <?php
-// Variaveis de php - serão utilizaas no HTML a baixo
-$nome = "Rafael de Morais Farias";
-$profissao = "Futuro professor e militar";
-$curso = "Técnico em informatica - IFPR";
-$pagina_atual = "inicio";
+/**
+ * ARQUIVO      : 01_php-intro/index.php
+ * Autor        : Rafael de Morais Farias
+ */
+
+$nome          = "Rafael de Morais Farias";
+$pagina_atual  = "inicio"; 
+$caminho_raiz  = "../";
+$titulo_pagina = "Home - $nome";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifólio - <?php echo $nome; ?></title>
-    <style>
-        body {font-family: Arial, sans-serif; margin: 0; background-color: #eee6c7;}
-        nav {background-color: #4c0377; padding: 15px 30px;}
-        nav a {color: white; text-decoration: none; margin-right: 20px; font-weight: bold;}
-        nav a:hover {text-decoration: underline;}
-        .hero {background: linear-gradient(135deg, #7c5ca8, #2a2a5c); color: #f8e7a2; text-align: center; padding: 60px 20px;}
-        .hero h1 {font-size: 2.5em; margin-bottom: 10px;}
-        .hero p {font-size: 1.2em; opacity: 0.9;}
-        .container {max-width: 800px; margin: 40px auto; padding: 0 20px;}
-        footer {background-color: #010000; color: #6b7280; text-align: center; padding: 20px; margin-top: 60px; font-size: 14px;}
-    </style>
+    <?php include '../includes/cabecalho.php'; ?>
 </head>
 <body>
-<?php include "includes/cabecalho.php"; ?>
-    <div class="hero">
-        <h1><?php echo $nome; ?></h1>
-        <p><?php echo $profissao; ?> | <?php echo $curso; ?></p>
-    </div>
-    <div class="container">
-        <h1>Bem-vindo ao meu portfólio</h1>
-        <p>Esta página foi gerado pelo PHP em: 
-            <strong><?php echo date("d/m/Y \á\s H:i"); ?></strong></p>
-        </div>
+    <main>
+        <h1>Página Inicial</h1>
+        <p>Bem-vindo ao meu portfólio de Desenvolvimento Web II.</p>
+    </main>
 
-'<?php include "includes/rodape.php"; ?>
+    <?php include '../includes/rodape.php'; ?>
 </body>
 </html>

@@ -1,0 +1,157 @@
+/* ── Reset ───────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #F8E2D4;
+  color: #4D067B;
+  line-height: 1.7;
+}
+
+/* ── Container ───────────────────────── */
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+/* ── Header ───────────────────────── */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #821cc2, rgb(255, 250, 205));
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 32px;
+  color: #4D067B;
+}
+
+header p {
+  color: #7209B7;
+  margin-top: 10px;
+}
+
+/* ── Box info ───────────────────────── */
+.box-info {
+  background: white;
+  border-left: 4px solid #7209B7;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* ── Seção ───────────────────────── */
+.secao {
+  margin: 30px 0 20px;
+  color: #7209B7;
+}
+
+/* ── Cards ───────────────────────── */
+.card-aula {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* brilho SEM bloquear clique */
+.card-aula::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(0,0,0,0.05), transparent);
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none; /* 👈 ESSENCIAL */
+}
+
+.card-aula:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-aula:hover::before {
+  opacity: 1;
+}
+
+/* ── Ícone ───────────────────────── */
+.icone {
+  font-size: 32px;
+}
+
+/* ── Conteúdo ───────────────────────── */
+.conteudo {
+  position: relative;
+  z-index: 2; /* 👈 garante clique */
+}
+
+.conteudo h3 {
+  margin: 6px 0;
+}
+
+.conteudo p {
+  color: #4D067B;
+}
+
+/* ── Badge ───────────────────────── */
+.badge {
+  background: #B984DB;
+  color: #4D067B;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ── Conceitos ───────────────────────── */
+.conceitos {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #7209B7;
+}
+
+/* ── Botão (CORRIGIDO) ───────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+  position: relative;
+  z-index: 3; /* 👈 garante clique */
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+/* ── Código ───────────────────────── */
+.box-info div {
+  background: #4D067B !important;
+  color: #F8E2D4 !important;
+}
+
+/* ── Rodapé ───────────────────────── */
+footer {
+  background: #4D067B;
+  color: #B984DB;
+  text-align: center;
+  padding: 25px;
+  margin-top: 60px;
+  font-size: 14px;
+}
