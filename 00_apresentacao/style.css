@@ -3,12 +3,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background: #F8E2D4;
+    color: #4D067B;
 }
 
 /* Cabeçalho */
 header {
-    background-color: #333;
-    color: white;
+    background: linear-gradient(135deg, #821cc2, #fffacd); /* mantém degrade */
+    color: #4D067B;
     padding: 20px;
     text-align: center;
 }
@@ -20,29 +22,55 @@ main {
     padding: 20px;
 }
 
-
 /* Rodapé */
 footer {
     display: block;
-    background-color: #333;
-    color: white;
+    background-color: #4D067B;
+    color: #B984DB;
     text-align: center;
     padding: 15px;
 }
 
+/* Imagem */
 img {
     width: 420px;
     height: 420px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid grey;
-    margin: 20px, 20px, 20px, 20px;
+    border: 5px solid #7209B7;
+    margin: 20px;
 }
 
+/* Lateral */
 aside {
     flex: 1;
 }
 
+/* Seção */
 section {
-    border: 20px solid white;
+    border: 20px solid #F8E2D4;
+}
+
+/* Texto dentro da box branca */
+section {
+    color: #333; /* texto escuro pra fundo branco */
+}
+/* Seção (box branca) */
+section {
+    border: 20px solid #F8E2D4;
+    background: white;
+    color: #333; /* 👈 texto escuro */
+}
+
+/* Texto dentro da section */
+section h3 {
+    color: #333;
+    font-weight: normal;
+    line-height: 1.6;
+}
+
+/* Parágrafo dentro */
+section p {
+    margin-top: 10px;
+    color: #333;
 }
