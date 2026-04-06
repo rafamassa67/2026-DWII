@@ -37,22 +37,22 @@ function menu_class($item, $atual) {
     <!-- Links para o portfólio - Aula 03 -->
     <a href="<?php echo $caminho_raiz; ?>01_php-intro/index.php" 
        <?php echo menu_class("inicio", $pagina_atual); ?>>
-       🏠 Início
+       🔰 Início
     </a>
 
     <a href="<?php echo $caminho_raiz; ?>01_php-intro/sobre.php" 
        <?php echo menu_class("sobre", $pagina_atual); ?>>
-       👤 Sobre
+       🩻 Sobre
     </a>
 
     <a href="<?php echo $caminho_raiz; ?>01_php-intro/projetos.php" 
        <?php echo menu_class("projetos", $pagina_atual); ?>>
-       🚀 Projetos
+       🗃️ Projetos
     </a>
 
     <!-- Link para o formulário - Aula 04 -->
     <a href="<?php echo $caminho_raiz; ?>02_formularios/contato.php" 
        <?php echo menu_class("contato", $pagina_atual); ?>>
-       📧 Contato
+       🗣️ Contato
     </a>
 </nav>

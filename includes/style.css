@@ -155,3 +155,312 @@ footer {
   margin-top: 60px;
   font-size: 14px;
 }
+/* ── Formulário ───────────────────────── */
+.form-container {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels */
+.form-container label {
+  font-weight: bold;
+  color: #7209B7;
+}
+
+/* Inputs e textarea */
+.form-container input,
+.form-container textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-family: inherit;
+  transition: 0.2s;
+}
+
+/* Foco bonito */
+.form-container input:focus,
+.form-container textarea:focus {
+  outline: none;
+  border-color: #7209B7;
+  box-shadow: 0 0 0 2px rgba(114, 9, 183, 0.2);
+}
+
+/* Botão do formulário */
+.form-container button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #7209B7;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-container button:hover {
+  background: #5a0a91;
+  transform: scale(1.03);
+}
+
+/* ── Alertas ───────────────────────── */
+.alerta-sucesso {
+  background: #e6ffed;
+  border-left: 5px solid #4CAF50;
+  color: #1b5e20;
+  padding: 15px;
+  border-radius: 8px;
+  animation: aparecer 0.4s ease;
+}
+
+.alerta-erro {
+  background: #ffe5e5;
+  border-left: 5px solid #ff4d4d;
+  color: #a00000;
+  padding: 15px;
+  border-radius: 8px;
+  animation: aparecer 0.4s ease;
+}
+
+/* Animação suave */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Título da seção ───────────────────────── */
+.titulo-secao {
+  margin-bottom: 20px;
+  color: #7209B7;
+}
+/* ── Página de confirmação ──────────────────────────────── */
+.confirmacao { text-align: center; margin-top: 60px; }
+.confirmacao-icone { font-size: 60px; margin: 0; }
+.confirmacao-titulo { color: #3ba34a; margin: 16px 0 8px; }
+.confirmacao-texto { font-size: 16px; color: #374151; margin-bottom: 24px; }
+/* ── Confirmação (Obrigado) ───────────────────────── */
+.confirmacao {
+  background: white;
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Ícone */
+.confirmacao-icone {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+/* Título */
+.confirmacao-titulo {
+  color: #7209B7;
+  margin-bottom: 15px;
+}
+
+/* Texto */
+.confirmacao-texto {
+  color: #333;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* Botão */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #7209B7;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #5a0a91;
+  transform: scale(1.05);
+}
+/* ── Navegação ───────────────────────── */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    background: #4D067B;
+}
+
+/* Links */
+nav a {
+    text-decoration: none;
+    color: #F8E2D4;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* Hover */
+nav a:hover {
+    background: #7209B7;
+    transform: scale(1.05);
+}
+
+/* Página ativa */
+nav a.ativo {
+    background: #B984DB;
+    color: #4D067B;
+}
+/* ── Página de detalhe (PDO) ───────────────────────── */
+
+/* Link voltar */
+.voltar {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #7209B7;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.voltar:hover {
+  text-decoration: underline;
+}
+
+/* Card do detalhe */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* Cabeçalho do card */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Título do detalhe */
+.card h1 {
+  color: #7209B7;
+  margin: 0 0 10px;
+  font-size: 26px;
+}
+
+/* Descrição */
+.descricao {
+  font-size: 16px;
+  margin: 16px 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Tabela */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.tabela td {
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Linhas alternadas */
+.tabela tr:nth-child(even) {
+  background: #f3f4f6;
+}
+
+/* Primeira coluna */
+.tabela td:first-child {
+  font-weight: bold;
+  width: 160px;
+  color: #4D067B;
+}
+/* ── Cards do catálogo (PDO) ───────────────────────── */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+/* Hover bonito */
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Título do card */
+.card h3 {
+  margin: 0;
+  color: #4D067B;
+}
+
+/* Texto */
+.card p {
+  margin: 10px 0;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Badge (categoria) */
+.card span {
+  background: #e8edf5;
+  color: #4D067B;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Link "Ver detalhes" */
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #7209B7;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.card a:hover {
+  text-decoration: underline;
+  color: #5a0a91;
+}
+.subtexto {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+.card-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

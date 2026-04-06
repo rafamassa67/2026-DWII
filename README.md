@@ -35,6 +35,6 @@ Repositório da disciplina **Desenvolvimento Web II** — 2026
 2. Acesse a pasta `00_apresentacao/`
 3. Abra o arquivo `index.html` no navegador
 
----
+---/
 
 *Disciplina ministrada pelo Prof. Dr. João Henrique Berssanette — joao.berssanette@ifpr.edu.br*

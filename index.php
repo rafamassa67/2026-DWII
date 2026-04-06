@@ -27,7 +27,7 @@ $subtitulo = "Repositório 2026 — Desenvolvimento Web II";
 $aulas = [
 
     [
-        "numero"   => "02",
+        "numero"   => "00",
         "nome"     => "Apresentação Pessoal",
         "descricao"=> "Página estática com HTML e CSS — foto de perfil e layout responsivo.",
         "link"     => "00_apresentacao/index.html",
@@ -40,7 +40,7 @@ $aulas = [
         "numero"   => "03",
         "nome"     => "Portfólio Dinâmico com PHP",
         "descricao"=> "Mini-site de portfólio com variáveis, includes e menu dinâmico.",
-        "link"     => "01_php_intro/index.php",
+        "link"     => "01_php-intro/index.php",
         "icone"    => "📜",
         "cor"      => "#3b579d",
         "conceitos"=> "Variáveis, echo, include, foreach, operador ternário",
@@ -107,7 +107,7 @@ $aulas = [
 </div>
 
 <!-- LISTAGEM -->
-<h2 class="secao">🌱 Projetos por Aula</h2>
+<h2 class="secao">👾 Projetos por Aula</h2>
 
 <?php foreach ($aulas as $aula): ?>
 
