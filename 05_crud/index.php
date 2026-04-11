@@ -1,11 +1,11 @@
 <?php
 /**
  * Disciplina : Desenvolvimento Web II (DWII)
- * Aula       : 07 - CRUD: Create e Read
+ * Aula       : 08 - CRUD completo uptade e delete
  * Arquivo    : 05_crud/index.php
  * Autor      : Rafael de Morais Farias
  * Data       : 06/04/2024
- * Descrição  : Exibe a listagem de projetos
+ * Descrição  : Exibe a listagem de projetos e exibe mensagens de feedback após ações de cadastro, edição ou exclusão.
  */
 
 // --- Proteção: apenas usuários autenticados ---
@@ -22,6 +22,15 @@ $projetos = $stmt->fetchAll();
 
 // --- Mensagem de sucesso após cadastro ---
 $cadastroOk = isset($_GET['cadastro']) && $_GET['cadastro'] === 'ok';
+
+// --- Mensagem de sucesso após atualização ---
+$editadoOk = isset($_GET['editado']) && $_GET['editado'] === 'ok';
+
+// --- Mensagem de sucesso após exclusão ---
+$excluidoOk = isset($_GET['excluido']) && $_GET['excluido'] === 'ok';
+
+// mensagens de erro de validação ou operação
+$erroMsg = isset($_GET['erro']) ? $_GET['erro'] : '';
 
 $titulo_pagina = 'Meus Projetos - Portfólio';
 $caminho_raiz = '../';
@@ -44,7 +53,30 @@ $pagina_atual = '';
 
     <?php if ($cadastroOk): ?>
         <div class="alerta-sucesso">
-            <p>✅ Projeto cadastrado com sucesso!</p>
+            <p>🆗 Projeto cadastrado com sucesso!</p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ($editadoOk): ?>
+        <div class="alerta-sucesso">
+            <p>🔄️ Projeto atualizado com sucesso!</p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ($excluidoOk): ?>
+        <div class="alerta-sucesso">
+            <p>🚮 Projeto removido com sucesso!</p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ($erroMsg === 'nao_encontrado'): ?>
+        <div class="alerta-erro">
+        <p>❔ Projeto não encontrado</p>
+        </div>
+
+    <?php elseif ($erroMsg === 'id_invalido'): ?>
+        <div class="alerta-erro">
+        <p>❕ Requisição inválida</p>
         </div>
     <?php endif; ?>
 
@@ -86,7 +118,14 @@ $pagina_atual = '';
                             👾 Ver no GitHub
                         </a>
                     <?php endif; ?>
-
+                    <a href="editar.php?id=<?php echo $projeto['id']; ?>"
+                       class="btn btn-primario">
+                        ✏️ Editar
+                    </a>
+                    <a href="excluir.php?id=<?php echo $projeto['id']; ?>"
+                       class="btn btn-danger">
+                        🗑️ Excluir
+                    </a>
                 </div>
             <?php endforeach; ?>
         </div>
