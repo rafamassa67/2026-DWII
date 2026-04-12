@@ -45,11 +45,12 @@ $pagina_atual = '';
     </div>
 
     <div class="card painel-card">
-        <h3>📇 Painel de controle</h3>
+        <h3>🕹️ Painel de controle</h3>
         <p>Este conteúdo só é visível para usuários autenticados.
         </p>
-        <p>Nas próximas aulas este painel terá funcionalidades
-        reais (CRUD).</p>
+        <a href="../05_crud/index.php" class="btn btn-primario">
+            🗂️ Gerenciar projetos
+        </a>
     </div>
 
     <div class="logout-container">
