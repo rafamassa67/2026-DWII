@@ -17,7 +17,18 @@ require_once __DIR__ . '/includes/conexao.php';
 
 // --- Busca todos os projetos ordenados pelo mais recente ---
 $pdo = conectar();
-$stmt = $pdo->query('SELECT * FROM projetos ORDER BY criado_em DESC');
+
+$busca = trim($_GET['busca'] ?? '');
+
+if ($busca !== '') {
+    $stmt = $pdo->prepare('SELECT * FROM projetos WHERE nome LIKE :busca ORDER BY criado_em DESC');
+    $stmt->execute([
+        ':busca' => '%' . $busca . '%'
+    ]);
+} else {
+    $stmt = $pdo->query('SELECT * FROM projetos ORDER BY criado_em DESC');
+}
+
 $projetos = $stmt->fetchAll();
 
 // --- Mensagem de sucesso após cadastro ---
@@ -46,10 +57,22 @@ $pagina_atual = '';
 
 <div class="container">
 
-    <div class="topo-projetos">
-        <h1 class="titulo-secao">🗃️ Meus Projetos</h1>
-        <a href="cadastrar.php" class="btn btn-primario">🔆 Novo Projeto</a>
-    </div>
+<div class="topo-projetos">
+
+    <h1 class="titulo-secao">🗃️ Meus Projetos</h1>
+
+    <form method="get" style="display:flex; gap:10px; align-items:center;">
+        <input type="text" name="busca"
+               placeholder="Buscar projeto..."
+               value="<?php echo htmlspecialchars($_GET['busca'] ?? ''); ?>"
+               style="padding:8px; border-radius:6px; border:1px solid #ccc;">
+
+        <button type="submit" class="btn btn-primario">🔍</button>
+    </form>
+
+    <a href="cadastrar.php" class="btn btn-primario">🔆 Novo Projeto</a>
+
+</div>
 
     <?php if ($cadastroOk): ?>
         <div class="alerta-sucesso">
@@ -112,18 +135,49 @@ $pagina_atual = '';
 
                     <?php if ($projeto['link_github']): ?>
                         <a href="<?php echo htmlspecialchars($projeto['link_github']); ?>"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="btn btn-secundario">
-                            👾 Ver no GitHub
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="
+                            display:inline-block;
+                            margin-top:10px;
+                            margin-right:6px;
+                            padding:6px 12px;
+                            background:#7209B7;
+                            color:white;
+                            border-radius:6px;
+                            text-decoration:none;
+                            font-size:13px;
+                            font-weight:bold;">
+                            👾 GitHub
                         </a>
                     <?php endif; ?>
+
                     <a href="editar.php?id=<?php echo $projeto['id']; ?>"
-                       class="btn btn-primario">
+                    style="
+                        display:inline-block;
+                        margin-top:10px;
+                        margin-right:6px;
+                        padding:6px 12px;
+                        background:#8318c9;
+                        color:white;
+                        border-radius:6px;
+                        text-decoration:none;
+                        font-size:13px;
+                        font-weight:bold;">
                         ✏️ Editar
                     </a>
+
                     <a href="excluir.php?id=<?php echo $projeto['id']; ?>"
-                       class="btn btn-danger">
+                    style="
+                        display:inline-block;
+                        margin-top:10px;
+                        padding:6px 12px;
+                        background:#4D067B;
+                        color:white;
+                        border-radius:6px;
+                        text-decoration:none;
+                        font-size:13px;
+                        font-weight:bold;">
                         🗑️ Excluir
                     </a>
                 </div>
@@ -133,8 +187,7 @@ $pagina_atual = '';
         <p class="contador-projetos">
             <?php echo count($projetos); ?> projeto(s) cadastrado(s)
         </p>
-
-    <?php endif; ?>
+        <?php endif; ?>
 
 </div>
 
