@@ -1,0 +1,1105 @@
+/* ── Reset ───────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #F8E2D4;
+  color: #4D067B;
+  line-height: 1.7;
+}
+
+/* ── Container ───────────────────────── */
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+/* ── Header ───────────────────────── */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #821cc2, rgb(255, 250, 205));
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 32px;
+  color: #4D067B;
+}
+
+header p {
+  color: #7209B7;
+  margin-top: 10px;
+}
+
+/* ── Box info ───────────────────────── */
+.box-info {
+  background: white;
+  border-left: 4px solid #7209B7;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* ── Seção ───────────────────────── */
+.secao {
+  margin: 30px 0 20px;
+  color: #7209B7;
+}
+
+/* ── Cards ───────────────────────── */
+.card-aula {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* brilho SEM bloquear clique */
+.card-aula::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(0,0,0,0.05), transparent);
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none; /* 👈 ESSENCIAL */
+}
+
+.card-aula:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-aula:hover::before {
+  opacity: 1;
+}
+
+/* ── Ícone ───────────────────────── */
+.icone {
+  font-size: 32px;
+}
+
+/* ── Conteúdo ───────────────────────── */
+.conteudo {
+  position: relative;
+  z-index: 2; /* 👈 garante clique */
+}
+
+.conteudo h3 {
+  margin: 6px 0;
+}
+
+.conteudo p {
+  color: #4D067B;
+}
+
+/* ── Badge ───────────────────────── */
+.badge {
+  background: #B984DB;
+  color: #4D067B;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ── Conceitos ───────────────────────── */
+.conceitos {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #7209B7;
+}
+
+/* ── Botão (CORRIGIDO) ───────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+  position: relative;
+  z-index: 3; /* 👈 garante clique */
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+/* ── Código ───────────────────────── */
+.box-info div {
+  background: #4D067B !important;
+  color: #F8E2D4 !important;
+}
+
+/* ── Rodapé ───────────────────────── */
+footer {
+  background: #4D067B;
+  color: #B984DB;
+  text-align: center;
+  padding: 25px;
+  margin-top: 60px;
+  font-size: 14px;
+}
+/* ── Formulário ───────────────────────── */
+.form-container {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels */
+.form-container label {
+  font-weight: bold;
+  color: #7209B7;
+}
+
+/* Inputs e textarea */
+.form-container input,
+.form-container textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-family: inherit;
+  transition: 0.2s;
+}
+
+/* Foco bonito */
+.form-container input:focus,
+.form-container textarea:focus {
+  outline: none;
+  border-color: #7209B7;
+  box-shadow: 0 0 0 2px rgba(114, 9, 183, 0.2);
+}
+
+/* Botão do formulário */
+.form-container button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #7209B7;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-container button:hover {
+  background: #5a0a91;
+  transform: scale(1.03);
+}
+
+/* ── Alertas ───────────────────────── */
+.alerta-sucesso {
+  background: #e6ffed;
+  border-left: 5px solid #4CAF50;
+  color: #1b5e20;
+  padding: 15px;
+  border-radius: 8px;
+  animation: aparecer 0.4s ease;
+}
+
+.alerta-erro {
+  background: #ffe5e5;
+  border-left: 5px solid #ff4d4d;
+  color: #a00000;
+  padding: 15px;
+  border-radius: 8px;
+  animation: aparecer 0.4s ease;
+}
+
+/* Animação suave */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Título da seção ───────────────────────── */
+.titulo-secao {
+  margin-bottom: 20px;
+  color: #7209B7;
+}
+/* ── Página de confirmação ──────────────────────────────── */
+.confirmacao { text-align: center; margin-top: 60px; }
+.confirmacao-icone { font-size: 60px; margin: 0; }
+.confirmacao-titulo { color: #3ba34a; margin: 16px 0 8px; }
+.confirmacao-texto { font-size: 16px; color: #374151; margin-bottom: 24px; }
+/* ── Confirmação (Obrigado) ───────────────────────── */
+.confirmacao {
+  background: white;
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Ícone */
+.confirmacao-icone {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+/* Título */
+.confirmacao-titulo {
+  color: #7209B7;
+  margin-bottom: 15px;
+}
+
+/* Texto */
+.confirmacao-texto {
+  color: #333;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* Botão */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #7209B7;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #5a0a91;
+  transform: scale(1.05);
+}
+/* ── Navegação ───────────────────────── */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    background: #4D067B;
+}
+
+/* Links */
+nav a {
+    text-decoration: none;
+    color: #F8E2D4;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* Hover */
+nav a:hover {
+    background: #7209B7;
+    transform: scale(1.05);
+}
+
+/* Página ativa */
+nav a.ativo {
+    background: #B984DB;
+    color: #4D067B;
+}
+/* ── Página de detalhe (PDO) ───────────────────────── */
+
+/* Link voltar */
+.voltar {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #7209B7;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.voltar:hover {
+  text-decoration: underline;
+}
+
+/* Card do detalhe */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* Cabeçalho do card */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Título do detalhe */
+.card h1 {
+  color: #7209B7;
+  margin: 0 0 10px;
+  font-size: 26px;
+}
+
+/* Descrição */
+.descricao {
+  font-size: 16px;
+  margin: 16px 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Tabela */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.tabela td {
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Linhas alternadas */
+.tabela tr:nth-child(even) {
+  background: #f3f4f6;
+}
+
+/* Primeira coluna */
+.tabela td:first-child {
+  font-weight: bold;
+  width: 160px;
+  color: #4D067B;
+}
+/* ── Cards do catálogo (PDO) ───────────────────────── */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+/* Hover bonito */
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Título do card */
+.card h3 {
+  margin: 0;
+  color: #4D067B;
+}
+
+/* Texto */
+.card p {
+  margin: 10px 0;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Badge (categoria) */
+.card span {
+  background: #e8edf5;
+  color: #4D067B;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Link "Ver detalhes" */
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #7209B7;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.card a:hover {
+  text-decoration: underline;
+  color: #5a0a91;
+}
+.subtexto {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+.card-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* ── Login / Área restrita ───────────────────────── */
+.login-container {
+  max-width: 420px;
+  margin: 60px auto;
+}
+
+/* Título do login */
+.login-titulo {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* Texto inferior */
+.login-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Link voltar */
+.login-footer a {
+  color: #7209B7;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+/* ── Glow neon no login ───────────────────────── */
+.login-container .form-container {
+  background: white;
+  box-shadow: 
+    0 0 10px #7209B7,
+    0 0 25px rgba(114, 9, 183, 0.6);
+}
+
+/* Inputs com glow */
+.login-container input:focus {
+  border-color: #7209B7;
+  box-shadow: 
+    0 0 5px #7209B7,
+    0 0 10px #7209B7;
+}
+/* ── Painel (área restrita) ───────────────────────── */
+.painel-container {
+  max-width: 800px;
+  margin: 60px auto;
+}
+
+/* Card do painel */
+.painel-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Título */
+.painel-card h3 {
+  color: #7209B7;
+  margin-bottom: 10px;
+}
+
+/* Texto */
+.painel-card p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Botão sair */
+.btn-logout {
+  display: inline-block;
+  background: #7209B7;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-logout:hover {
+  background: #5a0a91;
+  transform: scale(1.05);
+}
+
+/* Centralizar botão */
+.logout-container {
+  text-align: center;
+  margin-top: 24px;
+}
+.alerta-sucesso {
+  margin-bottom: 20px;
+}
+/* ── Página pública ───────────────────────── */
+.publico-container {
+  text-align: center;
+  margin-top: 60px;
+}
+
+/* Texto */
+.publico-texto {
+  color: #333;
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+/* Botão azul */
+.btn-azul {
+  background: #5a0a91;
+}
+
+.btn-azul:hover {
+  background: #43046d;
+}
+
+/* Botão verde */
+.btn-verde {
+  background: #3ba34a;
+}
+
+.btn-verde:hover {
+  background: #2e7d36;
+}
+/* ── Box da página pública ───────────────────────── */
+.publico-container {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  background: white;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* espaço interno */
+.publico-container h1 {
+  margin-bottom: 15px;
+}
+
+.publico-texto {
+  margin-bottom: 20px;
+}
+/* ── Página de cadastro ───────────────────────── */
+.container h1.titulo-secao {
+  text-align: center;
+}
+
+/* Ajuste do form */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Espaçamento entre campos */
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Inputs mais bonitos */
+.form-container input,
+.form-container textarea {
+  background: #fafafa;
+}
+
+/* Campo em foco */
+.form-container input:focus,
+.form-container textarea:focus {
+  background: #fff;
+}
+
+/* Labels com melhor espaçamento */
+.form-container label {
+  margin-top: 5px;
+}
+
+/* Asterisco obrigatório */
+.form-container span {
+  font-weight: bold;
+}
+
+/* Botão salvar (leve destaque) */
+.form-container button {
+  margin-top: 15px;
+  background: linear-gradient(135deg, #7209B7, #821cc2);
+}
+
+/* Hover mais chamativo */
+.form-container button:hover {
+  filter: brightness(1.1);
+  transform: scale(1.04);
+}
+
+/* Link voltar */
+.voltar-link {
+  display: inline-block;
+  margin-top: 20px;
+  text-align: center;
+  color: #3b579d;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.voltar-link:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+/* ── Topo da página ───────────────────────── */
+.topo-projetos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* ── Grid ───────────────────────── */
+.grid-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ── Card padrão ───────────────────────── */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+/* ── Card projeto ───────────────────────── */
+.projeto-card h3 {
+  color: #7209B7;
+  margin-bottom: 8px;
+}
+
+.descricao {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.meta {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+/* ── Botões ───────────────────────── */
+.btn-primario {
+  background: linear-gradient(135deg, #7209B7, #821cc2);
+  color: white;
+}
+
+.btn-secundario {
+  background: #e8edf5;
+  color: #3b579d;
+}
+
+/* ── Estado vazio ───────────────────────── */
+.vazio {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+}
+
+.icone-vazio {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+/* ── Contador ───────────────────────── */
+.contador-projetos {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #6b7280;
+  text-align: right;
+}
+/* ── Página de exclusão ───────────────────────── */
+.excluir-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+/* Card de confirmação */
+/* Container centralizado em coluna */
+.excluir-container {
+  display: flex;
+  flex-direction: column; /* 👈 empilha */
+  align-items: center;
+  margin-top: 60px;
+}
+
+/* Card de exclusão com glow */
+.card-excluir {
+  background: white;
+  max-width: 480px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+
+  /* remove linha lateral */
+  border: none;
+
+  /* glow roxo */
+  box-shadow: 
+    0 10px 25px rgba(0,0,0,0.1),
+    0 0 25px rgba(114, 9, 183, 0.6),
+    0 0 50px rgba(114, 9, 183, 0.3);
+
+  
+}
+
+/* Título */
+.titulo-excluir {
+  text-align: center;
+  color: #7209B7;
+  margin-bottom: 20px;
+}
+
+/* Nome do projeto */
+.nome-projeto {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4D067B;
+  margin-bottom: 15px;
+}
+
+/* Texto de aviso */
+.aviso-excluir {
+  color: #cf1c21;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Botões */
+.acoes-excluir {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Botão perigo */
+.btn-perigo {
+  background: #7209B7;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-perigo:hover {
+  background: #4D067B;
+  transform: scale(1.05);
+}
+
+/* Botão cancelar */
+.btn-secundario {
+  background: #B984DB;
+  color: #4D067B;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-secundario:hover {
+  background: #a56ccc;
+  transform: scale(1.05);
+}
+/* ── Formulário de edição ───────────────────────── */
+.formulario {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+  /* glow roxo leve */
+  border-left: 4px solid #7209B7;
+  box-shadow: 0 0 15px rgba(114, 9, 183, 0.2);
+}
+
+/* Cada campo */
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+/* Label */
+.label-campo {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #7209B7;
+}
+
+/* Inputs e textarea */
+.input-texto {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-family: inherit;
+  transition: 0.2s;
+}
+
+/* Foco bonito */
+.input-texto:focus {
+  outline: none;
+  border-color: #7209B7;
+  box-shadow: 0 0 0 2px rgba(114, 9, 183, 0.2);
+}
+
+/* Botões */
+.btn-primario,
+.btn-secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+.btn-primario {
+  background: linear-gradient(135deg, #7209B7, #9D4EDD);
+  color: white;
+  box-shadow: 0 5px 15px rgba(114, 9, 183, 0.3);
+}
+
+.btn-primario:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(114, 9, 183, 0.5);
+}
+
+.btn-secundario {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btn-secundario:hover {
+  background: #d1d5db;
+  transform: scale(1.05);
+}
+/* ===== APRESENTAÇÃO ===== */
+
+.apresentacao {
+  max-width: 1000px;
+  margin: 40px auto;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* FOTO */
+.foto-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.foto-perfil {
+  width: 400px; /* 🔥 maior */
+  height: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #7209B7;
+  box-shadow: 0 10px 30px rgba(114, 9, 183, 0.35);
+}
+
+/* TEXTO */
+.texto-container {
+  flex: 2;
+  min-width: 300px;
+
+  background: white; /* 🔥 box branca */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.texto-container h2 {
+  margin-bottom: 12px;
+  font-size: 24px;
+  color: #7209B7;
+}
+
+.texto-container p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* CARDS */
+.info-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background: #f9fafb;
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  font-size: 14px;
+}
+
+/* ÍCONE */
+.card-icon {
+  font-size: 18px;
+}
+
+/* TEXTO */
+.card-texto {
+  color: #1f2937;
+}
+
+/* RESPONSIVO */
+@media (max-width: 700px) {
+  .apresentacao {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-cards {
+    justify-content: center;
+  }
+}
+
+.info-cards {
+  display: flex;
+  flex-direction: column; /* 🔥 empilha */
+  gap: 12px;
+}
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+
+  box-shadow: 0 0 10px rgba(114, 9, 183, 0.2); /* glow base */
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  box-shadow: 0 0 20px rgba(114, 9, 183, 0.5); /* 🔥 glow forte */
+  transform: translateY(-2px);
+}
+/* GRID DE PROJETOS */
+.grid-projetos-publico {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card-projeto-publico {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.2s;
+}
+
+.card-projeto-publico:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(114, 9, 183, 0.2);
+}
+
+/* TITULO */
+.card-projeto-publico h3 {
+  margin-bottom: 8px;
+  color: #7209B7;
+}
+
+/* TEXTO */
+.card-projeto-publico p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* BOTÃO */
+.card-projeto-publico a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+
+  background: #7209B7;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.card-projeto-publico a:hover {
+  background: #5a0a91;
+}
