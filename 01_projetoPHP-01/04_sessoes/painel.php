@@ -48,7 +48,7 @@ $pagina_atual = '';
         <h3>🕹️ Painel de controle</h3>
         <p>Este conteúdo só é visível para usuários autenticados.
         </p>
-        <a href="../05_crud/index.php" class="btn btn-primario">
+        <a href="../05_crud/index.php" class="btn btn-primario" style="color: white; text-decoration: none;">
             🗂️ Gerenciar projetos
         </a>
     </div>

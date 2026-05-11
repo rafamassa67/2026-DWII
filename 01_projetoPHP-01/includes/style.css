@@ -759,3 +759,182 @@ nav a.ativo {
   color: #6b7280;
   text-align: right;
 }
+/* ── Página de exclusão ───────────────────────── */
+.excluir-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+/* Card de confirmação */
+/* Container centralizado em coluna */
+.excluir-container {
+  display: flex;
+  flex-direction: column; /* 👈 empilha */
+  align-items: center;
+  margin-top: 60px;
+}
+
+/* Card de exclusão com glow */
+.card-excluir {
+  background: white;
+  max-width: 480px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+
+  /* remove linha lateral */
+  border: none;
+
+  /* glow roxo */
+  box-shadow: 
+    0 10px 25px rgba(0,0,0,0.1),
+    0 0 25px rgba(114, 9, 183, 0.6),
+    0 0 50px rgba(114, 9, 183, 0.3);
+
+  
+}
+
+/* Título */
+.titulo-excluir {
+  text-align: center;
+  color: #7209B7;
+  margin-bottom: 20px;
+}
+
+/* Nome do projeto */
+.nome-projeto {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4D067B;
+  margin-bottom: 15px;
+}
+
+/* Texto de aviso */
+.aviso-excluir {
+  color: #cf1c21;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Botões */
+.acoes-excluir {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Botão perigo */
+.btn-perigo {
+  background: #7209B7;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-perigo:hover {
+  background: #4D067B;
+  transform: scale(1.05);
+}
+
+/* Botão cancelar */
+.btn-secundario {
+  background: #B984DB;
+  color: #4D067B;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-secundario:hover {
+  background: #a56ccc;
+  transform: scale(1.05);
+}
+/* ── Formulário de edição ───────────────────────── */
+.formulario {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+  /* glow roxo leve */
+  border-left: 4px solid #7209B7;
+  box-shadow: 0 0 15px rgba(114, 9, 183, 0.2);
+}
+
+/* Cada campo */
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+/* Label */
+.label-campo {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #7209B7;
+}
+
+/* Inputs e textarea */
+.input-texto {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-family: inherit;
+  transition: 0.2s;
+}
+
+/* Foco bonito */
+.input-texto:focus {
+  outline: none;
+  border-color: #7209B7;
+  box-shadow: 0 0 0 2px rgba(114, 9, 183, 0.2);
+}
+
+/* Botões */
+.btn-primario,
+.btn-secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+.btn-primario {
+  background: linear-gradient(135deg, #7209B7, #9D4EDD);
+  color: white;
+  box-shadow: 0 5px 15px rgba(114, 9, 183, 0.3);
+}
+
+.btn-primario:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(114, 9, 183, 0.5);
+}
+
+.btn-secundario {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btn-secundario:hover {
+  background: #d1d5db;
+  transform: scale(1.05);
+}

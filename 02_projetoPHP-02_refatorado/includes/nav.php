@@ -43,7 +43,7 @@ $logado = isset($_SESSION['usuario']);
     </a>
    
     <!-- Link para o painel - Aula 04 -->
-    <a href="<?php echo $caminho_raiz; ?>publico.php" 
+    <a href="<?php echo $caminho_raiz; ?>04_sessoes/publico.php" 
        <?php echo menu_class("publico", $pagina_atual); ?>>
        🌐 Publico
     </a>

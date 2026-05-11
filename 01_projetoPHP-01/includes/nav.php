@@ -7,26 +7,11 @@
  * Autor        : Rafael de Morais Farias
  * Conceitos    : Menu dinâmico, operador ternário, $caminho_raiz
  * ------------------------------------------------------------------
- * 
- * Mesmo padrão do nav.php da Aula 03, com duas melhorias:
- *   1. Links montados via $caminho_raiz -> funciona de qualquer pasta
- *   2. Classe CSS "ativo" em vez de style inline -> CSS externo controla
- * 
- * Variáveis esperadas:
- *   $pagina_atual  - string: identifica qual item destacar no menu
- *   $caminho_raiz  - string: caminho relativo até a raiz
  */
 
 // Valores padrão: evita erro se a página esquecer de declarar
 if (!isset($pagina_atual)) $pagina_atual = "";
 if (!isset($caminho_raiz)) $caminho_raiz = "../";
-
-/**
- * menu_class() - retorna 'class="ativo"' se o item corresponde
- * à página atual, ou '' caso contrário.
- * Substitui os quatro operadores ternários repetidos da Aula 03
- * por uma função reutilizável - menos código, mesma lógica.
- */
 
 function menu_class($item, $atual) {
     return ($item === $atual) ? 'class="ativo"' : '';
@@ -55,4 +40,29 @@ function menu_class($item, $atual) {
        <?php echo menu_class("contato", $pagina_atual); ?>>
        🗣️ Contato
     </a>
+   
+    <!-- Link para o painel - Aula 04 -->
+      <a href="<?php echo $caminho_raiz; ?>04_sessoes/publico.php" 
+         <?php echo menu_class("publico", $pagina_atual); ?>>
+         🌐 Publico
+      </a>
+
+    <?php if (isset($_SESSION['usuario'])): ?>
+        <!-- Link para o catalogo - Aula 05 -->
+        <a href="<?php echo $caminho_raiz; ?>05_crud/index.php" 
+           <?php echo menu_class("catalogo", $pagina_atual); ?>>
+           📚 Catálogo
+        </a>
+
+        <!-- Link para o painel - Aula 04 -->
+        <a href="<?php echo $caminho_raiz; ?>04_sessoes/painel.php" 
+           <?php echo menu_class("painel", $pagina_atual); ?>>
+           📇 Painel
+        </a>
+
+        <!-- Link para Sair -->
+        <a href="<?php echo $caminho_raiz; ?>04_sessoes/logout.php">
+           🚪 Sair
+        </a>
+    <?php endif; ?>
 </nav>

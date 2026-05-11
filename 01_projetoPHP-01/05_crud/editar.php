@@ -59,9 +59,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ano         = (int) ($_POST['ano']       ?? date('Y'));
 
     // Validação
-    if ($nome === '' || $descricao === '' || $tecnologias === '')
-    {
+    if ($nome === '' || $descricao === '' || $tecnologias === '') {
         $erro = 'Preencha todos os campos obrigatórios.';
+    } elseif ($ano < 2000 || $ano > (int) date('Y')) {
+        $erro = 'Ano inválido. Deve estar entre 2000 e o ano atual.';
     }
 
     // UPDATE - só executa se não há erro
@@ -162,15 +163,12 @@ $pagina_atual = '';
             <label class="label-campo">Ano *</label>
             <input type="number" name="ano" class="input-texto"
                    value="<?php echo (int) $projeto['ano']; ?>"
-                   min="2000" max="2099">
+                   min="2000" max="2026">
         </div>
         <div style="display: flex; gap: 12px; margin-top: 8px;">
-            <button type="submit" class="btn-primario">💾 Salvar
-            Alterações</button>
-            <a href="index.php" class="btn-secundario">Cancelar</
-            a>
+            <button type="submit" class="btn-primario">💾 Salvar Alterações</button>
+            <a href="index.php" class="btn-secundario">Cancelar</a>
         </div>
-
     </form>
 
 </div>
