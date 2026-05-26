@@ -18,17 +18,22 @@ $pagina_atual = 'projetos';
 $titulo_pagina = 'Projetos | Portfólio DWII';
 $caminho_raiz = './';
 
-require_once __DIR__ . './includes/conexao.php';
+require_once __DIR__ . '/includes/conexao.php';
 
-$pdo       = conectar();
-$stmt      = $pdo->query('SELECT * FROM projetos ORDER BY criado_em DESC');
+$pdo = conectar();
+$stmt = $pdo->query(
+    "SELECT * FROM projetos
+     WHERE status = 'publicado'
+     ORDER BY criado_em DESC"
+);
 
 $projetos = $stmt->fetchAll();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <?php include __DIR__ . './includes/cabecalho.php'; ?>
+  <?php include __DIR__ . '/includes/cabecalho.php'; ?>
 </head>
 <body>
   <div class="container">
